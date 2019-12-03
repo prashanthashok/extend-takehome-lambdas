@@ -1,6 +1,6 @@
 import fetch from 'node-fetch'
-import { Response } from './types'
-import * as constants from './constants'
+import { Response } from './shared/types'
+import * as constants from './shared/constants'
 
 interface StuffResponse extends Response {
   body: RandomDog

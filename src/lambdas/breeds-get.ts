@@ -1,6 +1,6 @@
 import fetch from 'node-fetch'
-import * as constants from './constants'
-import { Response } from './types'
+import * as constants from './shared/constants'
+import { Response } from './shared/types'
 
 interface BreedResponse extends Response {
   body: string[]
