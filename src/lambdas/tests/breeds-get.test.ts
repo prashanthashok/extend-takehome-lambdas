@@ -42,12 +42,11 @@ describe('breeds-get handler error', () => {
   })
 
   it('throws error if service times out', async () => {
-    // the call to node-fetch will automatically timeout
-    // as we have not specified a return value for the node-fetch-mock
+    mockedFetch.mockRejectedValueOnce(new Error('mock timeout'))
 
     const timeOutErrorPayload = {
-      body: "Cannot read property 'json' of undefined",
-      statusCode: 'TypeError',
+      body: 'Oops! Error Occurred',
+      statusCode: 500,
     }
     const res = await handler()
     expect(res).toMatchObject(timeOutErrorPayload)
