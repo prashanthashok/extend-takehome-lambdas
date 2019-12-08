@@ -42,3 +42,5 @@ typings/
 .env
 
 dist
+node_modules
+.vscode

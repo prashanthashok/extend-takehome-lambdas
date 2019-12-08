@@ -1,5 +1,6 @@
 import fetch from 'node-fetch'
-import { Response } from './types'
+import { Response } from './shared/types'
+import * as constants from './shared/constants'
 
 interface StuffResponse extends Response {
   body: RandomDog
@@ -11,7 +12,7 @@ interface RandomDog {
 }
 
 export async function handler(): Promise<StuffResponse> {
-  const res = await fetch('https://dog.ceo/api/breeds/image/random')
+  const res = await fetch(constants.RANDOM_DOG_IMAGE_API)
   const payload: RandomDog = await res.json()
   return {
     statusCode: 200,

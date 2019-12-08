@@ -1,5 +1,5 @@
 import fetch from 'node-fetch'
-import { handler } from './stuff-get'
+import { handler } from '../stuff-get'
 
 const mockedFetch: jest.Mock = fetch as any
 
